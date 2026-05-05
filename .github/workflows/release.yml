@@ -21,7 +21,7 @@ jobs:
       - run: npm install
 
       - name: Pack tarball
-        run: npm pack --pack-destination ./release
+        run: mkdir -p release && npm pack --pack-destination ./release
 
       - name: Delete existing release (if any)
         run: gh release delete ${{ github.ref_name }} --yes || true
